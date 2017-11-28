@@ -1,0 +1,464 @@
+<ProductCatalog>
+	<ConsoleCatalog>	
+		<Technology id="Technopoly"> 
+			<name>Technopoly</name> 
+			<price>399.99</price> 
+			<image>images/t1.jpg</image> 
+			<Publisher>Technopoly</Publisher>
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories> 
+				<accessory>Robert_Frost</accessory> 
+				<accessory>William_Wallace</accessory> 
+				<accessory>Woodrow_Wilson</accessory>
+				<accessory>William_Shakespeare</accessory>
+			</accessories> 
+		</Technology>
+		<Technology id="Inevitable">
+			<name>The_Inevitable</name> 
+			<price>349.99</price>
+			<image>images/t2.jpg</image> 
+			<Publisher>Inevitable</Publisher> 
+			<condition>New</condition> 
+			<discount>0.0</discount>
+			<accessories>
+				<accessory>Woodrow_Wilson</accessory>
+			</accessories>
+		</Technology>
+		<Technology id="Internet">
+            <name>Future_of_Internet</name>
+            <price>400</price>
+			<image>images/t3.jpg</image> 
+			<Publisher>Futureworld</Publisher> 
+			<condition>New</condition> 
+			<discount>0.0</discount>
+			<accessories>
+				<accessory>Woodrow_Wilson</accessory>
+                <accessory>Robert_Frost</accessory>
+            </accessories>
+        </Technology>
+        <Technology id="Nature">
+            <name>Nature_of_Technology</name>
+            <price>320.19</price>
+			<image>images/t4.jpg</image> 
+			<Publisher>Technologyworld</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                <accessory>William_Wallace</accessory>
+                <accessory>Robert_Frost</accessory>
+            </accessories>
+        </Technology>
+		<Technology id="Informatics">
+                        <name>Mastering_Informatics</name>
+                        <price>410</price>
+			<image>images/t5.jpg</image> 
+			<Publisher>Informatics</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Shakespeare</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                </Technology>
+                <Technology id="Reboot">
+                        <name>Reboot</name>
+                        <price>575</price>
+			<image>images/t6.jpg</image> 
+			<Publisher>Technospa</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Wallace</accessory>
+                               <accessory>Robert_Frost</accessory>
+                        </accessories>
+                </Technology>
+                <Technology id="Education">
+                        <name>Rethinking_Education</name>
+                        <price>190</price>
+			<image>images/t7.jpg</image> 
+			<Publisher>Rethinker</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Robert_Frost</accessory>
+                               <accessory>William_Shakespeare</accessory>
+                        </accessories>
+                </Technology>
+                <Technology id="Digital">
+                        <name>Digital_Scholar</name>
+                        <price>290</price>
+			<image>images/t8.jpg</image> 
+			<Publisher>DigitalLib</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Woodrow_Wilson</accessory>
+                               <accessory>William_Wallace</accessory>
+                        </accessories>
+                </Technology>
+                <Technology id="Irresistable">
+                        <name>The_Irresistable</name>
+                        <price>375</price>
+			<image>images/t9.jpg</image> 
+			<Publisher>Technology</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Shakespeare</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                </Technology>
+                <Technology id="Music">
+                        <name>Music_Technology</name>
+                        <price>325</price>
+			<image>images/t10.jpg</image> 
+			<Publisher>Music_Tech</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Robert_Frost</accessory>
+                               <accessory>William_Wallace</accessory>
+                        </accessories>
+                </Technology>
+<!-- 		<comics id="Wolverine">
+                        <name>Wolverine</name>
+                        <price>345</price>
+			<image>images/c1.jpg</image> 
+			<Publisher>DC</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Woodrow_Wilson</accessory>
+                               <accessory>Robert_Frost</accessory>
+            </accessories>
+         </Comics> -->
+		<Comics id="Spiderman">
+                        <name>Sensational_Spiderman</name>
+                        <price>900</price>
+			<image>images/c2.jpg</image> 
+			<Publisher>Marvel</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Shakespeare</accessory>
+                               <accessory>William_Wallace</accessory>
+                        </accessories>
+                </Comics>
+                <Comics id="Daredevil">
+                        <name>Daredevil_vs_Hitler</name>
+                        <price>370</price>
+			<image>images/c3.jpg</image> 
+			<Publisher>Hitlers</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Shakespeare</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                </Comics>
+            <Comics id="Avengers">
+                        <name>The_Avengers</name>
+                        <price>755</price>
+			<image>images/c4.jpg</image> 
+			<Publisher>Marvel</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Woodrow_Wilson</accessory>
+                               <accessory>Robert_Frost</accessory>
+                        </accessories>
+                </Comics>
+                <Comics id="Captain">
+                        <name>Origin_of_Caption_America</name>
+                        <price>345</price>
+			<image>images/c5.jpg</image> 
+			<Publisher>DC</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Wallace</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                </Comics>
+
+		<Autobiography id="Obama">
+                        <name>Barack_Obama</name>
+                        <price>250</price>
+			<image>images/a1.jpg</image> 
+			<Publisher>LifeStories</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Robert_Frost</accessory>
+                               <accessory>William_Shakespeare</accessory>
+                        </accessories>
+                 </Autobiography>
+                 <Autobiography id="Lincoln">
+                        <name>Congressman_Lincoln</name>
+                        <price>400</price>
+			<image>images/a2.jpg</image> 
+			<Publisher>Greatest_president</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Woodrow_Wilson</accessory>
+                               <accessory>William_Shakespeare</accessory>
+                        </accessories>
+                 </Autobiography>
+                 <Autobiography id="Nelson">
+                        <name>Nelson_Mandela</name>
+                        <price>380</price>
+			<image>images/a3.jpg</image> 
+			<Publisher>HTC</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Wallace</accessory>
+                               <accessory>Robert_Frost</accessory>
+                        </accessories>
+                 </Autobiography>
+                 <Autobiography id="Wings">
+                        <name>Wings_on_Fire</name>
+                        <price>320</price>
+			<image>images/a4.jpg</image> 
+			<Publisher>APJ_Kalam</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Shakespeare</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                 </Autobiography>
+                 <Autobiography id="Gandhi">
+                        <name>Gandhi</name>
+                        <price>520</price>
+			<image>images/a5.jpg</image> 
+			<Publisher>Truth</Publisher> 
+			<condition>New</condition> 
+			<discount>0.0</discount>
+			<accessories>
+                               <accessory>Robert_Frost</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                 </Autobiography>
+
+		<Sports id="Messi">
+                        <name>Leo_Messi</name>
+                        <price>580</price>
+			<image>images/s1.jpg</image> 
+			<Publisher>Barca</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                <accessory>Robert_Frost</accessory> 
+				<accessory>William_Wallace</accessory> 
+				<accessory>Woodrow_Wilson</accessory>
+				<accessory>William_Shakespeare</accessory>
+            </accessories>
+        </Sports>
+        <Sports id="Wenger">
+                        <name>Wenger_Revolution</name>
+                        <price>460</price>
+			<image>images/s2.jpg</image> 
+			<Publisher>Arsenal</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Wallace</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                 </Sports>
+                 <Sports id="Chelsea">
+                        <name>Chelsea_Fan</name>
+                        <price>370</price>
+			<image>images/s3.jpg</image> 
+			<Publisher>Chelsea</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Robert_Frost</accessory>
+                               <accessory>William_Shakespeare</accessory>
+                        </accessories>
+                 </Sports>
+                 <Sports id="Run">
+                        <name>Run_Fast</name>
+                        <price>390</price>
+			<image>images/s4.jpg</image> 
+			<Publisher>Baseball</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Woodrow_Wilson</accessory>
+                               <accessory>William_Wallace</accessory>
+                        </accessories>
+                 </Sports>
+                 <Sports id="Secret">
+                        <name>Secret_Game</name>
+                        <price>420</price>
+			<image>images/s5.jpg</image> 
+			<Publisher>BasketBall</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Robert_Frost</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                 </Sports>
+		
+		<Education id="Heart">
+                        <name>Heart_of_Education</name>
+                        <price>240</price>
+			<image>images/e1.jpg</image> 
+			<Publisher>Educationdiaries</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Woodrow_Wilson</accessory>
+                               <accessory>William_Shakespeare</accessory>
+                        </accessories>
+                 </Education>
+                 <Education id="Seven">
+                        <name>The_Seven_Myths</name>
+                        <price>510</price>
+			<image>images/e2.jpg</image> 
+			<Publisher>KnowledgeWorld</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Wallace</accessory>
+                               <accessory>Robert_Frost</accessory>
+                        </accessories>
+                 </Education>
+                 <Education id="Well">
+                        <name>Well_Educated_Mind</name>
+                        <price>240</price>
+			<image>images/e3.jpg</image> 
+			<Publisher>Mind</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Shakespeare</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                 </Education>
+                 <Education id="Who">
+                        <name>Who_Goes</name>
+                        <price>570</price>
+			<image>images/e4.jpg</image> 
+			<Publisher>Informatics</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Robert_Frost</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                 </Education>
+                 <Education id="Beyond">
+                        <name>Beyond_Gifted_Education</name>
+                        <price>360</price>
+			<image>images/e5.jpg</image> 
+			<Publisher>GiftedEdu</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Woodrow_Wilson</accessory>
+                               <accessory>William_Wallace</accessory>
+                        </accessories>
+                 </Education>
+
+		<Religion id="God">
+                        <name>God_Is_Not_One</name>
+                        <price>545</price>
+			<image>images/r1.jpg</image> 
+			<Publisher>Lord</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Robert_Frost</accessory>
+                               <accessory>William_Shakespeare</accessory>
+                        </accessories>
+                 </Religion>
+                 <Religion id="Christianity">
+                        <name>Christianity</name>
+                        <price>454</price>
+			<image>images/r2.jpg</image> 
+			<Publisher>Christian_Community</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Wallace</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                 </Religion>
+                 <Religion id="Religion_Science">
+                        <name>Religion_vs_Science</name>
+                        <price>650</price>
+			<image>images/r3.jpg</image> 
+			<Publisher>Scientific</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Robert_Frost</accessory>
+                               <accessory>Woodrow_Wilson</accessory>
+                        </accessories>
+                 </Religion>
+                 <Religion id="Bible">
+                        <name>Holy_Bible</name>
+                        <price>256</price>
+			<image>images/r4.jpg</image> 
+			<Publisher>Bible</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>William_Shakespeare</accessory>
+                               <accessory>William_Wallace</accessory>
+                        </accessories>
+                 </Religion>
+                 <Religion id="Ramayana">
+                        <name>Ramayana</name>
+                        <price>530</price>
+			<image>images/r5.jpg</image> 
+			<Publisher>Hinduism</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+			<accessories>
+                               <accessory>Woodrow_Wilson</accessory>
+                               <accessory>William_Shakespeare</accessory>
+                        </accessories>
+                 </Religion>
+
+		<AccessoriesCatalog id="accessory">
+            <name>Robert_Frost</name>
+            <price>320.19</price>
+			<image>images/ac1.jpg</image> 
+			<Publisher>Robert_Frost</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+        </AccessoriesCatalog>
+		<AccessoriesCatalog id="accessory">
+            <name>William_Wallace</name>
+            <price>250.19</price>
+			<image>images/ac2.jpg</image> 
+			<Publisher>William_Wallace</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+        </AccessoriesCatalog>
+		<AccessoriesCatalog id="accessory">
+            <name>Woodrow_Wilson</name>
+            <price>250.19</price>
+			<image>images/ac3.jpg</image> 
+			<Publisher>Woodrow</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+        </AccessoriesCatalog>
+		<AccessoriesCatalog id="accessory">
+            <name>William_Shakespeare</name>
+            <price>105.19</price>
+			<image>images/ac4.jpg</image> 
+			<Publisher>Lives</Publisher> 
+			<condition>New</condition> 
+			<discount>10.0</discount>
+        </AccessoriesCatalog>
+	</ConsoleCatalog>
+</ProductCatalog>
