@@ -2,16 +2,31 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
+import java.util.Map.Entry;
 
 
-
-public class Religion extends HttpServlet 
+public class Search extends HttpServlet 
 {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
   {  
-	SAXParserDataStore fetchProductList = new SAXParserDataStore();
-	List<Products> speakerList = fetchProductList.getReligionList();
-	
+	String[] categoryArr = request.getParameterValues("categories");
+	if(categoryArr == null)
+            categoryArr = new String[] {};
+        ArrayList<String> categories = new ArrayList<String>(Arrays.asList(categoryArr));
+
+       String searchterm = request.getParameter("searchterm");
+       if(searchterm == null)
+           searchterm = "";
+
+       ArrayList<Products> productList = new ArrayList<Products>();
+       MySQLDataStoreUtilities sqlUtil = new MySQLDataStoreUtilities();
+
+       for(String category : categories) {
+           productList.addAll(sqlUtil.getProductList(category));
+       }
+
+       if(!searchterm.equals(""))
+           productList = sort(productList, searchterm);
 	
     PrintWriter out = response.getWriter();
 	response.setContentType("text/html;charset=UTF-8");
@@ -20,6 +35,10 @@ public class Religion extends HttpServlet
 	out.println("<title>Book Hub</title>");
 	out.println("<link rel='shortcut icon' href='cart/icon.jpg'/>");
 	out.println("<link rel='stylesheet' href='styles.css' type='text/css' />");
+
+	//search  tab js
+	out.println("<script type='text/javascript' src='javascript.js'></script>");
+
 	out.println("</head>");
 	out.println("<body>");
 	out.println("<div id='container'>");
@@ -70,24 +89,23 @@ public class Religion extends HttpServlet
 	out.println("</nav>");
 	
 	out.println("<img class='header-image' src='images/img_index1.jpg' width = '100%' height = '100%' alt='Index Page Image' />");
-	
+
 	out.println("<div id='body'>");
 	out.println("<section id='content'>");
 	out.println("<article>");
-	out.println("<h2>Religious Books</h2>" +
+	out.println("<h2>Your search found the following books:</h2>" +
 				"<table>");
+        //out.println("<p>Whup! Still testing.</p>");
 	
-	/* out.println("Test 4");
-		out.println(speakerList);
-		out.println(SAXParserDataStore.productMap); */
 	
-	Products p,p2;
-	 for(int i = 0;i<speakerList.size();i++)
-	{
-		p = speakerList.get(i);
-		session.setAttribute("addtocart",p);
-		//out.println("p name: "+p.getName());
-		out.println("<tr>"+
+	if(productList.size() != 0) {
+            Products p,p2;
+	    for(int i = 0;i<productList.size();i++)
+	    {
+		    p = productList.get(i);
+		    session.setAttribute("addtocart",p);
+		    //out.println("p name: "+p.getName());
+		    out.println("<tr>"+
 					"	<td><b>" + p.getName() + "</b>  </td>" +
 					"	<td><img class='product-image' src='" +p.getImage()+ "'></td>" +
 					"	<td>$" + p.getPrice() + "</td>" +
@@ -108,7 +126,10 @@ public class Religion extends HttpServlet
 					"<input type='hidden' name='product' value='"+p+"'>" +
 					"</form>" +
 					"</tr>");
-	} 
+		}
+        } else {
+            out.println("<tr><br>We're sorry, but we couldn't find any products of sufficient relevance.</tr>");
+        }
 	
 	out.println("</table>");
 	out.println("</article>");
@@ -134,23 +155,41 @@ public class Religion extends HttpServlet
 	out.println(" </li>");
 	out.println("</ul>");
 	out.println("</li>");
-	
-        //Start of search feature
+
+       //Start of search feature
 	out.println("<li>");
 	out.println("<h4>Search site</h4>");
 	out.println("<ul>");
 	out.println("<li class='text'>");
 	out.println("<form method='get' class='searchform' action='search'>");
 	out.println("<p>");
-	out.println("<input type='text' size='25' name='searchterm' class='s' placeholder='Search...'>");
+	out.println("<input type='text' size='25' name='searchterm' class='s' value='"+searchterm+"' placeholder='Search...'>");
 	out.println("</p>");	                     
 
-	out.println("<input type='checkbox' name='categories' value='Technology' checked> <strong>Technology</strong><br>");
-        out.print("<input type='checkbox' name='categories' value='Comics' checked> <strong>Comics</strong><br>");
-        out.print("<input type='checkbox' name='categories' value='Autobiography' checked> <strong>Autobiography</strong><br>");
-        out.print("<input type='checkbox' name='categories' value='Sports' checked> <strong>Sports</strong><br>");
-        out.print("<input type='checkbox' name='categories' value='Education' checked> <strong>Education</strong><br>");
-        out.print("<input type='checkbox' name='categories' value='Religion' checked> <strong>Religion</strong><br>");         
+	out.print("<input type='checkbox' name='categories' value='Technology'");
+        if(categories.contains("Technology"))
+            out.print(" checked");
+        out.println("> <strong>Technology</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Comics'");
+        if(categories.contains("Comics"))
+            out.print(" checked");
+        out.println("> <strong>Comics</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Autobiography'");
+        if(categories.contains("Autobiography"))
+            out.print(" checked");
+        out.println("> <strong>Autobiography</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Sports'");
+        if(categories.contains("Sports"))
+            out.print(" checked");
+        out.println("> <strong>Sports</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Education'");
+        if(categories.contains("Education"))
+            out.print(" checked");
+        out.println("> <strong>Education</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Religion'");
+        if(categories.contains("Religion"))
+            out.print(" checked");
+        out.println("> <strong>Religion</strong><br>");         
         out.println("  </form>");
         out.println("</li></ul></li>");
 	//End of search feature
@@ -173,7 +212,80 @@ public class Religion extends HttpServlet
 	out.println("</footer>");	
 	out.println("</div>");	
 	out.println("</body>");	
-	out.println("</html>");	
+	out.println("</html>");
 
 	}
+
+    //Sorts products by relevance to the search term
+    private ArrayList<Products> sort(ArrayList<Products> products, String keywords) {
+        //Create a map to store distance values for each product
+        HashMap<Products, Double> similarityScores = new HashMap<Products, Double>();
+
+        //Calculate similarity score for each product name based on keywords
+        for(Products product : products) {
+            //Only put score if above a threshold
+            double score = similarityScore(keywords, product.getName());
+            if(score >= 0.05)
+                similarityScores.put(product, score);
+        }
+
+        //Make a list of the entries in the map
+        List<Entry<Products, Double>> list = new LinkedList<Entry<Products, Double>>(similarityScores.entrySet());
+
+        //Sorting the list based on scores w/ a Comparator
+        Collections.sort(list, new Comparator<Entry<Products, Double>>()
+        {
+            public int compare(Entry<Products, Double> o1,
+                    Entry<Products, Double> o2)
+            {
+                return o2.getValue().compareTo(o1.getValue());
+            }
+        });
+
+        //Put sorted values into array list, return
+        ArrayList<Products> returnedProducts = new ArrayList<Products>();
+        for (Entry<Products, Double> entry : list)
+        {
+            returnedProducts.add(entry.getKey());
+        }
+
+        return returnedProducts;
+    }
+
+    //Calculate the similarity score of two strings based on Levenshtein distance
+    private double similarityScore(String first, String second) {
+        int maxLength = Math.max(first.length(), second.length());
+        //Can't divide by 0
+        if (maxLength == 0)
+            return 1.0d;
+
+        first = first.toLowerCase();
+        second = second.toLowerCase();
+
+        int[] costs = new int[second.length() + 1];
+        for (int i = 0; i <= first.length(); i++) {
+            int previousValue = i;
+            for (int j = 0; j <= second.length(); j++) {
+                if (i == 0) {
+                    costs[j] = j;
+                }
+                else if (j > 0) {
+                    int useValue = costs[j - 1];
+                    if (first.charAt(i - 1) != second.charAt(j - 1)) {
+                        useValue = Math.min(Math.min(useValue, previousValue), costs[j]) + 1;
+                    }
+                    costs[j - 1] = previousValue;
+                    previousValue = useValue;
+
+                }
+            }
+            if (i > 0) {
+                costs[second.length()] = previousValue;
+            }
+        }
+
+        int editDistance = costs[second.length()];
+
+        return ((double) (maxLength - editDistance)) / (double) maxLength;
+    }
 }

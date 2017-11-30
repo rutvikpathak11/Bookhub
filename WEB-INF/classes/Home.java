@@ -1,4 +1,4 @@
-import java.io.*; 
+import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
@@ -226,30 +226,39 @@ public class Home extends HttpServlet {
 	out.println("<ul>");
 	out.println("<li class='text'>");
 	//Start of search feature
-	out.println("  <form name='autofillform' action='autocomplete'>");
+	out.println("  <form name='autofillform' action='search'>");
       out.println("<table border='0' cellpadding='5'> ");
       out.println("  <tbody> ");
           out.println("<tr>");
             out.println("<td><strong>Search :  </strong>");
                       
-                       out.println(" <input type='text' size='25' id='complete-field' onkeyup='doCompletion()' autocomplete='off'></td>");
+                       out.println(" <input type='text' name='searchterm' size='25' id='complete-field' onkeyup='doCompletion()' autocomplete='off'></td>");
                      
         out.println("</tr>");
           out.println("<tr>");
              out.println("<td id='auto-row' colspan='2'>");
-                out.println("<table id='complete-table' class='popupBox' />");
+                out.println("<table id='complete-table' class='popupBox'></table>");
               out.println("</td>");
           out.println("</tr>");
+          out.println("</td></tr>");
         out.println("</tbody>");
-     out.println(" </table></table>");
-  out.println("  </form>");
-	//End of search feature
+     out.println(" </table>");
 	/*out.println("<form method='get' class='searchform' action='#'>");
 	out.println("<p>");
 	out.println("<input type='text' size='25' value='' name='s' class='s' />");
 	out.println("</p>");	
 	out.println("</form>*/
-	out.println("</li></ul></li>");	     	
+	out.println("</li>");
+        out.println("<li>");
+        out.println("<input type='checkbox' name='categories' value='Technology' checked> <strong>Technology</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Comics' checked> <strong>Comics</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Autobiography' checked> <strong>Autobiography</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Sports' checked> <strong>Sports</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Education' checked> <strong>Education</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Religion' checked> <strong>Religion</strong><br>");         
+        out.println("</li></ul></li>");
+        out.println("  </form>");
+	//End of search feature
 	out.println("<li>");	
 	out.println("<h4>Helpful Links</h4>");	
 	out.println("<ul>");	
@@ -263,7 +272,7 @@ public class Home extends HttpServlet {
 	out.println("<div class='clear'></div>");	
 	out.println("</div>");	
 	out.println("<div class='footer-bottom'>");	
-	out.println("<p>Â©Book Hub - Enterprise Web Application </p>");
+	out.println("<p>©Book Hub - Enterprise Web Application </p>");
 	out.println("</div>");	
 	out.println("</footer>");	
 	out.println("</div>");	
@@ -494,30 +503,39 @@ public class Home extends HttpServlet {
 	out.println("<ul>");
 	out.println("<li class='text'>");
 	//Start of search feature
-	out.println("  <form name='autofillform' action='autocomplete'>");
+	out.println("  <form name='autofillform' action='search'>");
       out.println("<table border='0' cellpadding='5'> ");
       out.println("  <tbody> ");
           out.println("<tr>");
             out.println("<td><strong>Search :  </strong>");
                       
-                       out.println(" <input type='text' size='25' id='complete-field' onkeyup='doCompletion()' autocomplete='off'></td>");
+                       out.println(" <input type='text' name='searchterm' size='25' id='complete-field' onkeyup='doCompletion()' autocomplete='off'></td>");
                      
         out.println("</tr>");
           out.println("<tr>");
              out.println("<td id='auto-row' colspan='2'>");
-                out.println("<table id='complete-table' class='popupBox' />");
+                out.println("<table id='complete-table' class='popupBox'></table>");
               out.println("</td>");
           out.println("</tr>");
+          out.println("</td></tr>");
         out.println("</tbody>");
-     out.println(" </table></table>");
-  out.println("  </form>");
-	//End of search feature
+     out.println(" </table>");
 	/*out.println("<form method='get' class='searchform' action='#'>");
 	out.println("<p>");
 	out.println("<input type='text' size='25' value='' name='s' class='s' />");
 	out.println("</p>");	
 	out.println("</form>*/
-	out.println("</li></ul></li>");	     	
+	out.println("</li>");
+        out.println("<li>");
+        out.println("<input type='checkbox' name='categories' value='Technology' checked> <strong>Technology</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Comics' checked> <strong>Comics</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Autobiography' checked> <strong>Autobiography</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Sports' checked> <strong>Sports</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Education' checked> <strong>Education</strong><br>");
+        out.println("<input type='checkbox' name='categories' value='Religion' checked> <strong>Religion</strong><br>");         
+        out.println("</li></ul></li>");
+        out.println("  </form>");
+	//End of search feature
 	out.println("<li>");	
 	out.println("<h4>Helpful Links</h4>");	
 	out.println("<ul>");	
@@ -531,7 +549,7 @@ public class Home extends HttpServlet {
 	out.println("<div class='clear'></div>");	
 	out.println("</div>");	
 	out.println("<div class='footer-bottom'>");	
-	out.println("<p>Â©Book Hub - Enterprise Web Application </p>");
+	out.println("<p>©Book Hub - Enterprise Web Application </p>");
 	out.println("</div>");	
 	out.println("</footer>");	
 	out.println("</div>");	

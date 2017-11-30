@@ -134,15 +134,27 @@ public class Sports extends HttpServlet
 	out.println(" </li>");
 	out.println("</ul>");
 	out.println("</li>");	
+	
+	//Start of search feature
 	out.println("<li>");
 	out.println("<h4>Search site</h4>");
 	out.println("<ul>");
 	out.println("<li class='text'>");
-	out.println("<form method='get' class='searchform' action='#'>");
+	out.println("<form method='get' class='searchform' action='search'>");
 	out.println("<p>");
-	out.println("<input type='text' size='25' value='' name='s' class='s' />");
-	out.println("</p>");	
-	out.println("</form></li></ul></li>");	     	
+	out.println("<input type='text' size='25' name='searchterm' class='s' placeholder='Search...'>");
+	out.println("</p>");	                     
+
+	out.println("<input type='checkbox' name='categories' value='Technology' checked> <strong>Technology</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Comics' checked> <strong>Comics</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Autobiography' checked> <strong>Autobiography</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Sports' checked> <strong>Sports</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Education' checked> <strong>Education</strong><br>");
+        out.print("<input type='checkbox' name='categories' value='Religion' checked> <strong>Religion</strong><br>");         
+        out.println("  </form>");
+        out.println("</li></ul></li>");
+	//End of search feature
+
 	out.println("<li>");	
 	out.println("<h4>Helpful Links</h4>");	
 	out.println("<ul>");	
