@@ -10,6 +10,7 @@ public class Home extends HttpServlet {
   public void doGet(HttpServletRequest request,
                     HttpServletResponse response)
       throws ServletException, IOException {
+     DealMatches.getDeals("C:\\apache-tomcat-7.0.34\\webapps\\Bookhub\\DealMatches.txt");
 	  
     PrintWriter out = response.getWriter();
 	response.setContentType("text/html;charset=UTF-8");
@@ -190,6 +191,72 @@ public class Home extends HttpServlet {
 	out.println("<h2>Welcome to Book Hub</h2>");
 	out.println("<p>Book Hub offers variety of books.</p>");
 	out.println("<p>Shop at the best market rate</p>");
+
+        out.println("<table>");
+        if(DealMatches.getTweetOne() == null) {
+            out.println("<tr><td>We're sorry. We don't have any deals for today.</td></tr>");
+        } else {
+            out.println("<tr><td colspan='4'>Check out our deals!</td></tr>");
+
+            out.println("<tr><td colspan='4'>"+DealMatches.getTweetOne()+"</td></tr>");
+	    out.print("<tr>");
+
+            Products p = dbObj.getProduct(DealMatches.getIdOne());
+	    session.setAttribute("addtocart",p);
+	    out.print("<tr><td rowspan='3'><b>" + p.getName() + "</b>  </td>");
+	    out.print("<td rowspan='3'><img class='product-image' src='" +p.getImage()+ "'></td>");
+	    out.print("<td rowspan='3'>   $" + p.getPrice() + "</td>");
+
+	    out.print("<form class = 'submit-button' method = 'get' action = 'addtocart'>");
+	    out.print("<td><input class = 'submit-button' type = 'submit' value='Buy Now'></td></tr>");
+	    out.print("<input type='hidden' name='product' value='"+p+"'>");
+	    out.print("</form>");
+
+            //Write Review form
+	    out.print("<form class = 'submit-button' method = 'get' action = 'writereview'>");
+	    out.print("<tr><td><input class = 'submit-button' type = 'submit' value='Write Review'></td></tr>");
+	    out.print("<input type='hidden' name='product' value='"+p+"'>");
+	    out.print("<input type='hidden' name='productCategory' value='Speakers'>");
+	    out.print("</form>");
+	
+	    //View Review form
+	    out.print("<form class = 'submit-button' method = 'get' action = 'viewreview'>");
+	    out.print("<tr><td><input class = 'submit-button' type = 'submit' value='View Review'></td></tr>");
+	    out.print("<input type='hidden' name='product' value='"+p+"'>");
+	    out.println("</form>");
+
+            if(DealMatches.getTweetTwo() != null) {
+        	out.println("<tr><td colspan='4'>"+DealMatches.getTweetTwo()+"</td></tr>");
+		out.print("<tr>");
+
+        	Products p2 = dbObj.getProduct(DealMatches.getIdTwo());
+		session.setAttribute("addtocart",p2);
+	        out.print("<td rowspan='3'><b>" + p2.getName() + "</b>  </td>");
+	        out.print("<td rowspan='3'><img class='product-image' src='" +p2.getImage()+ "'></td>");
+	        out.print("<td rowspan='3'>$" + p2.getPrice() + "</td>");
+
+	        out.print("<form class = 'submit-button' method = 'get' action = 'addtocart'>");
+	        out.print("<td><input class = 'submit-button' type = 'submit' value='Buy Now'></td></tr>");
+	        out.print("<input type='hidden' name='product' value='"+p2+"'>");
+	        out.print("</form>");
+
+        	//Write Review form
+		out.print("<form class = 'submit-button' method = 'get' action = 'writereview'>");
+	        out.print("<tr><td><input class = 'submit-button' type = 'submit' value='Write Review'></td></tr>");
+	        out.print("<input type='hidden' name='product' value='"+p2+"'>");
+		out.print("<input type='hidden' name='productCategory' value='Speakers'>");
+		out.print("</form>");
+	
+		//View Review form
+		out.print("<form class = 'submit-button' method = 'get' action = 'viewreview'>");
+		out.print("<tr><td><input class = 'submit-button' type = 'submit' value='View Review'></td>");
+		out.print("<input type='hidden' name='product' value='"+p2+"'>");
+		out.print("</form>");
+		out.println("</tr>");
+            }
+        }
+        out.println("</table>");
+
 	out.println("</article>");
 	out.println("</section>");
 	
