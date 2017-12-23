@@ -16,7 +16,7 @@ To Successfully run the application, please make sure you have CLASSPATH set pro
 
 Make sure you have Tomcat,MySQL and MongoDB servers Up and Running.
 
-Copy entire Bookhub folder provided with this into your system.
+Copy all above files in a folder named 'Bookhub' and copy the Bookhub folder store in 'C:\apache-tomcat-7.0.34\webapps' in your system.
 
 Compile the code using javac *.java in command prompt
 
